@@ -1366,7 +1366,9 @@ Thân mời mọi người tới dự hôn lễ của chúng tôi Sự hiện di
                                 </div>
                                 </main>
                                 <footer class="modal__footer">
-                                <button class="modal__btn modal__btn-primary" type="submit">인사를 보내다 (Gửi lời chúc)</button>
+                                <button id="btnsendloichuc" class="modal__btn modal__btn-primary" type="submit">인사를 보내다 (Gửi lời chúc)</button>
+                               
+                                 
                                 <!-- <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">닫다 (Đóng)</button> -->
                                 </footer>
                                 </form>
@@ -1392,6 +1394,7 @@ Thân mời mọi người tới dự hôn lễ của chúng tôi Sự hiện di
                                             "https://script.google.com/macros/s/AKfycbwOAhwwVn7rZmC0kFuEZXKeIiUImJtHoD4OOafSqH6vAPp6olTeLr2rb7b-HC0y9d-c/exec",
                                         data = $("#attend-form-minh").serializeObject();
                                         console.log(data)
+                                        document.getElementById("btnsendloichuc").innerHTML = "배상 (Đang gửi)"
                                         $.ajax({
                                         data: data,
                                         dataType: "json",
@@ -1403,6 +1406,7 @@ Thân mời mọi người tới dự hôn lễ của chúng tôi Sự hiện di
                                             console.log(data);
                                             alert("감사합니다! (Cảm ơn bạn!)");
                                             MicroModal.close('modal-1');
+                                            document.getElementById("btnsendloichuc").innerHTML = "인사를 보내다 (Gửi lời chúc)"
                                         })
                                         .fail(function (jqXHR, textStatus, errorThrown) {
                                             // If fail
