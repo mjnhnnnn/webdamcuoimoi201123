@@ -559,47 +559,41 @@ Thân mời mọi người tới dự hôn lễ của chúng tôi Sự hiện di
                             style='display:inline-block;text-transform: uppercase;
                             border: 1px solid red;padding: 15px;'></p> -->
                             <script>
-                                var ngayconlai = document.getElementById('ngayconlai'), 
-                                gioconlai = document.getElementById('gioconlai'),
-                                phutconlai = document.getElementById('phutconlai'),
-                                giayconlai = document.getElementById('giayconlai');
-                                    // var p = document.getElementById('demnguoc');
-                                    var tet = new Date("Dec 01,2023 24:00:00").getTime();
-                                    //Tổng số giây 
+                                    var ngayconlai = document.getElementById('ngayconlai');
+                                    var gioconlai = document.getElementById('gioconlai');
+                                    var phutconlai = document.getElementById('phutconlai');
+                                    var giayconlai = document.getElementById('giayconlai');
+
+                                    var tet = new Date("Dec 01, 2023 24:00:00").getTime();
+
                                     var countDown2 = setInterval(run2, 1000);
+
                                     function run2() {
-
                                         var now = new Date().getTime();
-                                        //Số s đến thời gian hiện tại
                                         var timeRest = tet - now;
-                                        //Số days còn lại
+
                                         var day = Math.floor(timeRest / (1000 * 60 * 60 * 24));
-                                        var day2 = (Math.floor(timeRest / (1000 * 60 * 60 * 24)).toString().length > 1) ? Math.floor(timeRest / (1000 * 60 * 60 * 24)) : `0${Math.floor(timeRest / (1000 * 60 * 60 * 24))}`;
+                                        var day2 = (day < 10) ? '0' + day : day.toString();
 
-                                        //Số giờ còn lại
-                                        var hours = Math.floor(timeRest % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-                                        var hours2 = (Math.floor(timeRest % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)).toString().length > 1) ? Math.floor(timeRest % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)) : `0${Math.floor(timeRest % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))}`;
-                                        
-                                        // Số phút còn lại
-                                        var minute = Math.floor(timeRest % (1000 * 60 * 60) / (1000 * 60));
-                                        var minute2 = (Math.floor(timeRest % (1000 * 60 * 60) / (1000 * 60)).toString().length > 1) ? Math.floor(timeRest % (1000 * 60 * 60) / (1000 * 60)) : `0${Math.floor(timeRest % (1000 * 60 * 60) / (1000 * 60))}`;
+                                        var hours = Math.floor((timeRest % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                        var hours2 = (hours < 10) ? '0' + hours : hours.toString();
 
-                                        // Số giây còn lại
-                                        var sec = Math.floor(timeRest % (1000 * 60) / (1000));
-                                        var sec2 = (Math.floor(timeRest % (1000 * 60) / (1000)).toString().length > 1) ? Math.floor(timeRest % (1000 * 60) / (1000)) : `0${Math.floor(timeRest % (1000 * 60) / (1000))}`;
+                                        var minute = Math.floor((timeRest % (1000 * 60 * 60)) / (1000 * 60));
+                                        var minute2 = (minute < 10) ? '0' + minute : minute.toString();
 
-                                        // p.innerHTML = day + ' Ngày ' + hours + ' : ' + minute + ' : ' + sec + "  ";
-                                        // p.innerHTML = `${day2} Day ${hours2}:${minute2}:${sec2}`;
-                                        ngayconlai.innerHTML = day
-                                        gioconlai.innerHTML = hours
-                                        phutconlai.innerHTML = minute
-                                        giayconlai.innerHTML = sec
+                                        var sec = Math.floor((timeRest % (1000 * 60)) / 1000);
+                                        var sec2 = (sec < 10) ? '0' + sec : sec.toString();
+
+                                        ngayconlai.innerHTML = day2;
+                                        gioconlai.innerHTML = hours2;
+                                        phutconlai.innerHTML = minute2;
+                                        giayconlai.innerHTML = sec2;
+
                                         if (timeRest <= 0) {
-                                            clearInterval(counDown);
-                                            p.innerHTML = "HPNY";
+                                            clearInterval(countDown2);
                                         }
-                                    
                                     }
+
                                 </script>
                         </div>
 
