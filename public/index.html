@@ -583,27 +583,27 @@ Thân mời mọi người tới dự hôn lễ của chúng tôi Sự hiện di
                                     var countDown2 = setInterval(run, 1000);
 
                                    function run() {
-                                        const now = dayjs();
-                                        const timeRest = tet.diff(now, 'millisecond'); // Tính thời gian còn lại dưới dạng milliseconds
+    const now = dayjs();
+    const timeRest = tet.diff(now, 'millisecond'); // Tính thời gian còn lại dưới dạng milliseconds
 
-                                        if (timeRest <= 0) {
-                                            clearInterval(countDown2); // Dừng vòng lặp nếu đã đến thời gian
-                                            ngayconlai.innerHTML = 0;
-                                            gioconlai.innerHTML = 0;
-                                            phutconlai.innerHTML = 0;
-                                            giayconlai.innerHTML = 0;
-                                        } else {
-                                            const daysRemaining = tet.diff(now, 'day');
-                                            const hoursRemaining = tet.diff(now, 'hour') % 24;
-                                            const minutesRemaining = tet.diff(now, 'minute') % 60;
-                                            const secondsRemaining = tet.diff(now, 'second') % 60;
+    if (timeRest <= 0) {
+        clearInterval(countDown2);
+        ngayconlai.innerHTML = 0;
+        gioconlai.innerHTML = 0;
+        phutconlai.innerHTML = 0;
+        giayconlai.innerHTML = 0;
+    } else {
+        const daysRemaining = Math.floor(timeRest / (1000 * 60 * 60 * 24));
+        const hoursRemaining = Math.floor(timeRest % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+        const minutesRemaining = Math.floor(timeRest % (1000 * 60 * 60) / (1000 * 60));
+        const secondsRemaining = Math.floor(timeRest % (1000 * 60) / 1000);
 
-                                            ngayconlai.innerHTML = daysRemaining;
-                                            gioconlai.innerHTML = hoursRemaining;
-                                            phutconlai.innerHTML = minutesRemaining;
-                                            giayconlai.innerHTML = secondsRemaining;
-                                        }
-                                    }
+        ngayconlai.innerHTML = daysRemaining;
+        gioconlai.innerHTML = hoursRemaining;
+        phutconlai.innerHTML = minutesRemaining;
+        giayconlai.innerHTML = secondsRemaining;
+    }
+}
 
                                 </script>
                         </div>
