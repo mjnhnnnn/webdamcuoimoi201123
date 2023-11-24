@@ -573,16 +573,22 @@ Thân mời mọi người tới dự hôn lễ của chúng tôi Sự hiện di
                                         var timeRest = tet - now;
 
                                         var day = Math.floor(timeRest / (1000 * 60 * 60 * 24));
-                                        var day2 = (day < 10) ? '0' + day : day.toString();
+                                        // var day2 = (day < 10) ? '0' + day : day.toString();
 
                                         var hours = Math.floor((timeRest % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                        var hours2 = (hours < 10) ? '0' + hours : hours.toString();
+                                        // var hours2 = (hours < 10) ? '0' + hours : hours.toString();
 
                                         var minute = Math.floor((timeRest % (1000 * 60 * 60)) / (1000 * 60));
-                                        var minute2 = (minute < 10) ? '0' + minute : minute.toString();
+                                        // var minute2 = (minute < 10) ? '0' + minute : minute.toString();
 
                                         var sec = Math.floor((timeRest % (1000 * 60)) / 1000);
-                                        var sec2 = (sec < 10) ? '0' + sec : sec.toString();
+                                        // var sec2 = (sec < 10) ? '0' + sec : sec.toString();
+
+                                        var day2 = (parseInt(day) < 10) ? '0' + day : day.toString();
+                                        var hours2 = (parseInt(hours) < 10) ? '0' + hours : hours.toString();
+                                        var minute2 = (parseInt(minute) < 10) ? '0' + minute : minute.toString();
+                                        var sec2 = (parseInt(sec) < 10) ? '0' + sec : sec.toString();
+
 
                                         ngayconlai.innerHTML = day2;
                                         gioconlai.innerHTML = hours2;
