@@ -320,7 +320,7 @@
                             }
                         });
                     </script>
-                    <div class="card_bgm" style='display:block;'>
+                    <div id="pauseplay" class="card_bgm" style='display:block;'>
                         <img src="https://eo-yunyong-nguyen-van-wedding.site/storefarm/card/skin/img/play.svg" alt="bgm">
                         
                     </div>
@@ -1624,6 +1624,13 @@ Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của ch
         $('#moving_video11')[0].load();
         document.getElementById('moving_video11').play();
         $('#moving_video11').css('opacity', '1');
-        $(".card_bgm").click()
+
+
+        // var source = "./amthanh.mp3"
+        // var audio = new Audio();
+        // // no event listener needed here
+        // audio.src = source;
+        // audio.play();
+        document.querySelector('#skin_bgm').play();
     });
 </script>
