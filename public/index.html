@@ -1628,9 +1628,8 @@ Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của ch
         $('#moving_video11').css('opacity', '1');
 
 
-        var audio = new Audio('./amthanh.mp3');
-        audio.play();
-        $('#pauseplay').click()
+        document.getElementById('pauseplay').muted = false;
+        document.getElementById('pauseplay').play();
         // $('#pauseplay').on("click", () => {
         //     audio.pause();
         // })
