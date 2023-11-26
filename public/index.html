@@ -325,7 +325,7 @@
                         
                     </div>
                     <!-- âm thanh -->
-                    <audio id="skin_bgm" controls loop autoplay style="display:none;" >
+                    <audio id="skin_bgm" controls loop autoplay style="display:none;" muted="muted">
                       <source src="./amthanh.mp3" type="audio/mp3"></audio>
                       <!-- <source src="https://eo-yunyong-nguyen-van-wedding.site/storefarm/card/bgm/bgm.mp3" type="audio/mp3"></audio> -->
                     <div class="main_img_wrap offset_0 offset">
@@ -363,8 +363,9 @@
                                 <span style="font-weight: 600;">TRÂN TRỌNG KÍNH MỜI: 초대합니다</span>
                                  <p style="padding: 0 18px;text-align: center;font-size: 14px;" data-name="greeting_message" class="greeting_msg">
                                     안녕하세요
-신랑 황일 
-신부 웬녕 입니다.
+                                    <br>
+신랑 황일 신부 웬녕 입니다.
+<br>
 저희의 출발에 함께해주셔서
 너무나 감사드립니다.
 <br>
@@ -1627,7 +1628,11 @@ Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của ch
         $('#moving_video11').css('opacity', '1');
 
 
-        
-        $('#skin_bgm')[0].play()
+        var audio = new Audio('./amthanh.mp3');
+        audio.play();
+        $('#pauseplay').click()
+        $('#pauseplay').on("click", () => {
+            audio.pause();
+        })
     }); 
 </script>
