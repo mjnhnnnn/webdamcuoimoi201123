@@ -325,7 +325,7 @@
                         
                     </div>
                     <!-- âm thanh -->
-                    <audio muted="muted" id="skin_bgm" controls loop autoplay style="display:none;" muted="muted">
+                    <audio muted="muted" autoplay id="skin_bgm" controls loop style="display:none;" muted="muted">
                       <source src="./amthanh.mp3" type="audio/mp3"></audio>
                       <!-- <source src="https://eo-yunyong-nguyen-van-wedding.site/storefarm/card/bgm/bgm.mp3" type="audio/mp3"></audio> -->
                     <div class="main_img_wrap offset_0 offset">
@@ -1628,8 +1628,10 @@ Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của ch
         $('#moving_video11').css('opacity', '1');
 
 
-        document.getElementById('pauseplay').muted = false;
-        document.getElementById('pauseplay').play();
+        var audio = document.createElement("AUDIO")
+        document.body.appendChild(audio);
+        audio.src = "./amthanh.mp3";
+        audio.play();
         // $('#pauseplay').on("click", () => {
         //     audio.pause();
         // })
