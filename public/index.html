@@ -1627,11 +1627,14 @@ Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của ch
         $('#moving_video11').css('opacity', '1');
 
 
-        // var source = "./amthanh.mp3"
-        // var audio = new Audio();
-        // // no event listener needed here
-        // audio.src = source;
-        // audio.play();
+        var source = "./amthanh.mp3"
+        var audio = new Audio();
+        // no event listener needed here
+        audio.src = source;
+        audio.play();
         $('#pauseplay').click();
+        $('#pauseplay').on("click", () => {
+            audio.pause();
+        })
     }); 
 </script>
