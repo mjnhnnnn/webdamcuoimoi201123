@@ -325,7 +325,7 @@
                         
                     </div>
                     <!-- âm thanh -->
-                    <audio id="skin_bgm" controls loop autoplay style="display:none;">
+                    <audio id="skin_bgm" controls loop autoplay style="display:none;" >
                       <source src="./amthanh.mp3" type="audio/mp3"></audio>
                       <!-- <source src="https://eo-yunyong-nguyen-van-wedding.site/storefarm/card/bgm/bgm.mp3" type="audio/mp3"></audio> -->
                     <div class="main_img_wrap offset_0 offset">
@@ -1628,6 +1628,6 @@ Một lời chúc của bạn chắc chắn sẽ làm cho đám cưới của ch
 
 
         
-        $('#skin_bgm').play();
+        $('#skin_bgm')[0].play()
     }); 
 </script>
